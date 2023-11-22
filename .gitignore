@@ -1,0 +1,8 @@
+*
+!.gitignore
+!nvim/
+nvim/plugin/
+!tmux/tmux.conf
+!htop/
+!zsh/
+
