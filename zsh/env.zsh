@@ -30,3 +30,5 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/gunjansoni/.oh-my-zsh"
+
+export SF_CONTENT_TYPE="JSON"

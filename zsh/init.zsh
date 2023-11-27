@@ -1,3 +1,5 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+
 source "$XDG_CONFIG_HOME/zsh/secrets.zsh"
 source "$XDG_CONFIG_HOME/zsh/env.zsh"
 source "$XDG_CONFIG_HOME/zsh/config.zsh"

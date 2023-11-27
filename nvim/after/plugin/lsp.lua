@@ -101,7 +101,7 @@ local on_attach = function(_, bufnr)
     nmap('<leader>wwl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, '[W]orkspace [L]ist Folders')
-    nmap('<leader>f', vim.lsp.buf.format({ async = false, timeout_ms = 10000 }), '[F]ormat Buffer')
+    -- nmap('<leader>f', vim.lsp.buf.format({ async = false, timeout_ms = 10000 }), '[F]ormat Buffer')
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -109,17 +109,17 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 
     vim.api.nvim_clear_autocmds({ group = autogroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd('BufWritePre', {
-        group = autogroup,
-        buffer = bufnr,
-        callback = function()
-            vim.lsp.buf.format({
-                async = false,
-                timeout_ms = 10000,
-                filter = allow_format({ "tsserver", "eslint", "rust_analyzer", "gopls", "biome" })
-            })
-        end
-    })
+    -- vim.api.nvim_create_autocmd('BufWritePre', {
+    --     group = autogroup,
+    --     buffer = bufnr,
+    --     callback = function()
+    --         vim.lsp.buf.format({
+    --             async = false,
+    --             timeout_ms = 10000,
+    --             filter = allow_format({ "tsserver", "eslint", "rust_analyzer", "gopls", "biome" })
+    --         })
+    --     end
+    -- })
 end
 
 lsp.on_attach(on_attach)

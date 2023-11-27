@@ -1,6 +1,6 @@
 plugins=(git history node npm yarn autojump aws brew colorize docker docker-compose fig zsh-autosuggestions)
 
-ZSH_THEME="eastwood"
+ZSH_THEME="bira"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,4 +43,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-
+conda config --set auto_activate_base False
