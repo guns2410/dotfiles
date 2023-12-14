@@ -139,6 +139,6 @@ lsp.format_mapping('<leader>f', {
     },
     servers = {
         ['tsserver'] = { 'javascript', 'typescript' },
-        -- ['rust_analyzer'] = { 'rust' },
+        ['rust_analyzer'] = { 'rust' },
     }
 })

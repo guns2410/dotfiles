@@ -1,10 +1,11 @@
 require("telescope").setup {
     pickers = {
         find_files = {
-            theme = "dropdown",
+            theme = "ivy",
         },
         buffers = {
-            theme = "dropdown",
+            theme = "ivy",
+            sort_lastused = true,
         },
     },
     extensions = {
