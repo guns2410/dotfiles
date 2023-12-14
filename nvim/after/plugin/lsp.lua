@@ -96,6 +96,9 @@ local on_attach = function(_, bufnr)
 
     -- Lesser used LSP functionality
     nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    nmap('gl', vim.diagnostic.open_float, '[G]oto [E]ymbol')
+    nmap('gn', vim.diagnostic.goto_next, '[G]oto [N]ext Diagnostic')
+    nmap('gp', vim.diagnostic.goto_prev, '[G]oto [P]revious Diagnostic')
     nmap('<leader>wwa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
     nmap('<leader>wwr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
     nmap('<leader>wwl', function()
@@ -136,6 +139,6 @@ lsp.format_mapping('<leader>f', {
     },
     servers = {
         ['tsserver'] = { 'javascript', 'typescript' },
-        ['rust_analyzer'] = { 'rust' },
+        -- ['rust_analyzer'] = { 'rust' },
     }
 })

@@ -31,4 +31,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/gunjansoni/.oh-my-zsh"
 
-export SF_CONTENT_TYPE="JSON"
+# export SF_CONTENT_TYPE="JSON"
+
+# For docker to work correclty
+export DOCKER_DEFAULT_PLATFORM=linux/amd64

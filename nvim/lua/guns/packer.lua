@@ -146,10 +146,14 @@ return require('packer').startup(function(use)
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
+        opts = {
+            transparent = true,
+        },
     })
 
     use({ 'christoomey/vim-tmux-navigator' })
     use({ 'tpope/vim-surround' })
     use({ "numToStr/Comment.nvim" })
+    use({"romainl/Apprentice"})
+    use({"rebelot/kanagawa.nvim"})
 end)
