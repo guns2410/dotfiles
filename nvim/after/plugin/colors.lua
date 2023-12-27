@@ -29,5 +29,5 @@ require("kanagawa").setup({
 
 })
 
-ColorMyPencils("kanagawa-wave")
+ColorMyPencils("kanagawa-dragon")
 

@@ -82,6 +82,9 @@ local on_attach = function(_, bufnr)
 
     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    nmap('<leader>fc',
+        function() vim.lsp.buf.code_action({ apply = true, filter = function(a) return a.isPreferred end, }) end,
+        '[F]ix [C]ode')
 
     nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
     nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -112,17 +115,18 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 
     vim.api.nvim_clear_autocmds({ group = autogroup, buffer = bufnr })
-    -- vim.api.nvim_create_autocmd('BufWritePre', {
-    --     group = autogroup,
-    --     buffer = bufnr,
-    --     callback = function()
-    --         vim.lsp.buf.format({
-    --             async = false,
-    --             timeout_ms = 10000,
-    --             filter = allow_format({ "tsserver", "eslint", "rust_analyzer", "gopls", "biome" })
-    --         })
-    --     end
-    -- })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        group = autogroup,
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.format({
+                async = true,
+                bufnr = bufnr,
+                timeout_ms = 10000,
+                filter = allow_format({ "tsserver", "eslint", "rust_analyzer", "gopls", "biome", "prettier" }),
+            })
+        end
+    })
 end
 
 lsp.on_attach(on_attach)
