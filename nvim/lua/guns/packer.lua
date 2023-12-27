@@ -59,19 +59,7 @@ return require('packer').startup(function(use)
 
     use("github/copilot.vim")
 
-    use {
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
-        opts = {
-            options = {
-                icons_enabled = true,
-                theme = 'onedark',
-                component_separators = '|',
-                section_separators = '',
-            },
-        },
-    }
+    use { 'nvim-lualine/lualine.nvim' }
 
     use {
         'phaazon/hop.nvim',
@@ -154,6 +142,6 @@ return require('packer').startup(function(use)
     use({ 'christoomey/vim-tmux-navigator' })
     use({ 'tpope/vim-surround' })
     use({ "numToStr/Comment.nvim" })
-    use({"romainl/Apprentice"})
-    use({"rebelot/kanagawa.nvim"})
+    use({ "romainl/Apprentice" })
+    use({ "rebelot/kanagawa.nvim" })
 end)
