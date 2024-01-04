@@ -47,14 +47,17 @@ require("nvim-tree").setup({
 vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", {
     noremap = true,
     silent = true,
+    desc = "Toggle NvimTree",
 })
 
 vim.keymap.set("n", "<leader>ff", ":NvimTreeFindFile<CR>", {
     noremap = true,
     silent = true,
+    desc = "Find file in NvimTree",
 })
 
 vim.keymap.set("n", "<leader>fr", ":NvimTreeRefresh<CR>", {
     noremap = true,
     silent = true,
+    desc = "Refresh NvimTree",
 })
