@@ -25,6 +25,10 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use("tpope/vim-fugitive")
 
+    use { "folke/trouble.nvim",
+        requires = { "nvim-tree/nvim-web-devicons" },
+    }
+
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
@@ -36,7 +40,7 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        branch = 'v3.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -56,6 +60,7 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+
 
     use("github/copilot.vim")
 
@@ -129,6 +134,7 @@ return require('packer').startup(function(use)
 
     use { "catppuccin/nvim", as = "catppuccin" }
     use "ellisonleao/gruvbox.nvim"
+    use 'navarasu/onedark.nvim'
 
     use({
         "folke/tokyonight.nvim",
@@ -144,4 +150,6 @@ return require('packer').startup(function(use)
     use({ "numToStr/Comment.nvim" })
     use({ "romainl/Apprentice" })
     use({ "rebelot/kanagawa.nvim" })
+
+    use({ "AndrewRadev/splitjoin.vim" })
 end)

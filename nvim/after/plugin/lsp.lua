@@ -1,4 +1,4 @@
-require('mason').setup()
+require('mason').setup({})
 local autogroup = vim.api.nvim_create_augroup("LSPFormatting", {})
 local lsp = require("lsp-zero")
 
@@ -6,30 +6,23 @@ require('mason-lspconfig').setup({
     ensure_installed = { "tsserver", "eslint", "rust_analyzer", "gopls", "biome" },
     handlers = {
         lsp.default_setup,
-        tsserver = function()
-            require("lspconfig").tsserver.setup({
-                single_file_support = false,
-                on_attach = function(client, bufnr)
-                    client.resolved_capabilities.document_formatting = false
-                    on_attach(client, bufnr)
-                end
-            })
+        -- tsserver = function()
+        --     require("lspconfig").tsserver.setup({
+        --         single_file_support = false,
+        --         on_attach = function(client, bufnr)
+        --             client.resolved_capabilities.document_formatting = false
+        --             on_attach(client, bufnr)
+        --         end
+        --     })
+        -- end,
+        lua_ls = function()
+            local lua_opts = lsp.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
         end,
     },
 })
 
 lsp.preset("recommended")
-
-lsp.ensure_installed({
-    "tsserver",
-    "eslint",
-    "rust_analyzer",
-    "gopls",
-    "biome"
-})
-
--- Fix Undefined global "vim"
-lsp.nvim_workspace()
 
 local function allow_format(servers)
     return function(client) return vim.tbl_contains(servers, client.name) end
@@ -37,19 +30,6 @@ end
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-    ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-    ["<C-y>"] = cmp.mapping.confirm(cmp_select),
-    ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings["<Tab>"] = nil
-cmp_mappings["<S-Tab>"] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
 
 lsp.set_preferences({
     suggest_lsp_servers = true,
@@ -75,7 +55,7 @@ local on_attach = function(_, bufnr)
             desc = 'LSP: ' .. desc
         end
 
-        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc, remap = false })
     end
 
     lsp.default_keymaps({ buffer = bufnr })
@@ -111,22 +91,27 @@ local on_attach = function(_, bufnr)
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        vim.lsp.buf.format()
+        vim.lsp.buf.format({
+            async = true,
+            bufnr = bufnr,
+            timeout_ms = 10000,
+            -- filter = allow_format({ "prettierd", "biome", "rust_analyzer", "gopls", "tsserver", "prettier" }),
+        })
     end, { desc = 'Format current buffer with LSP' })
 
     vim.api.nvim_clear_autocmds({ group = autogroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd('BufWritePre', {
-        group = autogroup,
-        buffer = bufnr,
-        callback = function()
-            vim.lsp.buf.format({
-                async = true,
-                bufnr = bufnr,
-                timeout_ms = 10000,
-                filter = allow_format({ "tsserver", "eslint", "rust_analyzer", "gopls", "biome", "prettier" }),
-            })
-        end
-    })
+    -- vim.api.nvim_create_autocmd('BufWritePre', {
+    --     group = autogroup,
+    --     buffer = bufnr,
+    --     callback = function()
+    --         vim.lsp.buf.format({
+    --             async = false,
+    --             bufnr = bufnr,
+    --             timeout_ms = 10000,
+    --             -- filter = allow_format({ "prettierd", "biome", "rust_analyzer", "gopls", "tsserver", "prettier" }),
+    --         })
+    --     end
+    -- })
 end
 
 lsp.on_attach(on_attach)
@@ -142,7 +127,26 @@ lsp.format_mapping('<leader>f', {
         timeout_ms = 10000,
     },
     servers = {
-        ['tsserver'] = { 'javascript', 'typescript' },
-        ['rust_analyzer'] = { 'rust' },
+        -- ['rust_analyzer'] = { 'rust' },
+        -- ['gopls'] = { 'go' },
+        ['biome'] = { 'biome' },
+        -- ['prettierd'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'rust', 'go', 'biome' },
+        -- ['tsserver'] = { 'javascript', 'typescript' },
     }
+})
+
+cmp.setup({
+    sources = {
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
+    },
+    formatting = lsp.cmp_format(),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-Space>'] = cmp.mapping.complete(),
+    }),
 })

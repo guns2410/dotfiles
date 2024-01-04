@@ -33,10 +33,18 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 vim.opt.cc = ""
 
-vim.opt.cursorline = true
-vim.api.nvim_set_hl(0, "CursorLine", { default = true, blend = 100 })
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
 
+local set_cursor = function()
+    vim.api.nvim_exec([[
+        augroup Cursor
+            autocmd!
+            autocmd InsertEnter * set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+            autocmd InsertLeave * set guicursor=n-v-c:block-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+        augroup END
+    ]], false)
+end
 
---vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
+set_cursor()
 
 require('lualine').setup()

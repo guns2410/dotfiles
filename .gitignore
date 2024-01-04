@@ -1,8 +1,11 @@
 *
 !.gitignore
-!nvim/
-nvim/plugin/
+!/nvim
+!/nvim/**/**
+/nvim/plugin
+/nvim/.DS_Store
+!tmux/
 !tmux/tmux.conf
 !htop/
-!zsh/
+!zsh/*
 
