@@ -37,6 +37,8 @@ return {
 				"eslint_d", -- js linter
 				"rust-analyzer",
 				"biome",
+				"js-debug-adapter",
+				"go-debug-adapter",
 			},
 		})
 	end,

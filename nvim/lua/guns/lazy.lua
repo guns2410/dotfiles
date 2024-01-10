@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "guns.plugins" } }, {
-	install = { colorscheme = { "rose-pine" } },
+	install = { colorscheme = { "tokyonight" } },
 	checker = { enabled = true, notify = false },
 	change_detection = { notify = false },
 })
