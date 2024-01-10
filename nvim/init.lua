@@ -1,1 +1,2 @@
-require("guns")
+require("guns.core")
+require("guns.lazy")

@@ -34,17 +34,26 @@ vim.opt.colorcolumn = "120"
 vim.opt.cc = ""
 
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local set_cursor = function()
-    vim.api.nvim_exec([[
+	vim.api.nvim_exec(
+		[[
         augroup Cursor
             autocmd!
             autocmd InsertEnter * set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
             autocmd InsertLeave * set guicursor=n-v-c:block-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
         augroup END
-    ]], false)
+    ]],
+		false
+	)
 end
 
 set_cursor()
 
-require('lualine').setup()
+-- require('lualine').setup()

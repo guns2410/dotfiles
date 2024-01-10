@@ -26,14 +26,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>w", "<C-w>")
-vim.keymap.set("n", "<leader>c", "<Cmd>hi CursorLine   cterm=NONE ctermbg=Black guibg=Black blend=10<CR>")
-vim.keymap.set("n", "<leader>cc", "<Cmd>set cursorline!<CR>")
-vim.keymap.set("n", "<leader>g", '<cmd>silent !tmux neww -c "$PWD" lazygit<CR>')
+vim.keymap.set("n", "<leader>ggu", '<cmd>silent !tmux neww -c "$PWD" lazygit<CR>')
 
--- autocomplete parentheses
--- vim.keymap.set("i", "(", "()<Left>")
--- vim.keymap.set("i", "[", "[]<Left>")
--- vim.keymap.set("i", "{", "{}<Left>")
--- vim.keymap.set("i", '"', '""<Left>')
--- vim.keymap.set("i", "'", "''<Left>")
--- vim.keymap.set("i", "`", "``<Left>")
+vim.keymap.set("n", "<C-s>", ":wa<CR>")
+
