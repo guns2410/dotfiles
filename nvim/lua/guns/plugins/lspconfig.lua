@@ -19,7 +19,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		-- Default lsp config
-		local servers = { "rust_analyzer" }
+		local servers = { "rust_analyzer", "jedi_language_server", "pylsp" }
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
 				capabilities = capabilities,
@@ -41,22 +41,32 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		lspconfig.tsserver.setup({
-			capabilities = capabilities,
-			init_options = {
-				preferences = {
-					disableSuggestions = true,
-				},
-				hostInfo = "neovim",
-			},
-			root_dir = util.root_pattern("tsconfig.json", ".git", "package.json", "jsconfig.json"),
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
-		})
+		-- lspconfig.tsserver.setup({
+		-- 	capabilities = capabilities,
+		-- 	init_options = {
+		-- 		preferences = {
+		-- 			disableSuggestions = false,
+		-- 			includeCompletionsForImportStatements = true,
+		-- 			includeCompletionsWithSnippetText = true,
+		-- 		},
+		-- 		hostInfo = "neovim",
+		-- 		maxTsServerMemory = 4096,
+		-- 	},
+		-- 	commands = {
+		-- 		OrganizeImports = {
+		-- 			organize_imports,
+		-- 			description = "Organize Imports",
+		-- 		},
+		-- 	},
+		-- 	single_file_support = true,
+		-- })
+
+		-- quick_lint_js config
+		lspconfig.quick_lint_js.setup({})
+
+		-- ast_grep config
+		lspconfig.ast_grep.setup({})
+
 		-- gopls config
 		lspconfig.gopls.setup({
 			capabilities = capabilities,
@@ -94,8 +104,8 @@ return {
 
 		-- global mappings
 		keymap.set("n", "gl", vim.diagnostic.open_float)
-		keymap.set("n", "gn", vim.diagnostic.goto_prev)
-		keymap.set("n", "gp", vim.diagnostic.goto_next)
+		keymap.set("n", "gn", vim.diagnostic.goto_next)
+		keymap.set("n", "gp", vim.diagnostic.goto_prev)
 		keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
 		-- Use LspAttach autocommand to only map the following keys

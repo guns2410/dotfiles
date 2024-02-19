@@ -8,5 +8,6 @@ return {
 	"ellisonleao/gruvbox.nvim",
 
 	"fatih/vim-go",
-}
 
+	"shime/vim-livedown", -- markdown preview
+}

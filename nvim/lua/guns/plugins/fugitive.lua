@@ -10,4 +10,10 @@ return {
 		{ "<leader>ggS", ":Gstatus<CR>", { noremap = true, silent = true } },
 		{ "<leader>ggR", ":Gread<CR>", { noremap = true, silent = true } },
 	},
+	config = function()
+		local fugitive = require("fugitive")
+		fugitive.setup({
+			-- custom configuration here
+		})
+	end,
 }

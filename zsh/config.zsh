@@ -44,3 +44,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 conda config --set auto_activate_base False
+

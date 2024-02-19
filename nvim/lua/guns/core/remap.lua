@@ -27,6 +27,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>w", "<C-w>")
 vim.keymap.set("n", "<leader>ggu", '<cmd>silent !tmux neww -c "$PWD" lazygit<CR>')
+vim.keymap.set("n", "dp", "Vyp")
+vim.keymap.set("n", "dP", "VyP")
 
 vim.keymap.set("n", "<C-s>", ":wa<CR>")
-
