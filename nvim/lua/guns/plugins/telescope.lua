@@ -64,7 +64,7 @@ return {
 			{ desc = "Buffers" },
 		},
 		{
-			"<leader>bf",
+			"<leader>ff",
 			"<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>",
 			{ desc = "Buffers fuzzy" },
 		},
@@ -83,6 +83,9 @@ return {
 				buffers = {
 					theme = "ivy",
 					sort_lastused = true,
+				},
+				current_buffer_fuzzy_find = {
+					theme = "dropdown",
 				},
 			},
 			extensions = {
