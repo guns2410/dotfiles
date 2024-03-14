@@ -8,4 +8,9 @@
 !tmux/tmux.conf
 !htop/
 !zsh/*
+!wezterm/
+!wezterm/**/**
+!kitty/
+!kitty/**/**
+*.bak
 

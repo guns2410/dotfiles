@@ -102,6 +102,13 @@ return {
 					hijack_netrw = true,
 				},
 			},
+			defaults = require("telescope.themes").get_ivy({
+				-- winblend = 10,
+				-- layout_config = {
+				-- 	width = 0.9,
+				-- 	height = 0.9,
+				-- },
+			}),
 		})
 
 		require("telescope").load_extension("fzf")

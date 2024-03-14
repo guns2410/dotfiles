@@ -5,14 +5,14 @@ return {
 		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
-				disable_background = true,
+				disable_background = false,
 				variant = "auto",
 				bold_vert_split = false,
 				disable_italics = false,
 				styles = {
 					bold = true,
 					italic = false,
-					transparency = true,
+					transparency = false,
 				},
 			})
 		end,
@@ -33,7 +33,7 @@ return {
 			--
 			require("tokyonight").setup({
 				style = "night",
-				transparent = true,
+				transparent = false,
 				-- on_colors = function(colors)
 				-- 	colors.bg = bg
 				-- 	colors.bg_dark = bg_dark
@@ -60,9 +60,11 @@ return {
 		priority = 1000,
 		opts = {
 			undercurl = true,
-			transparent = true,
+			transparent = false,
 			dimInactive = false,
 			theme = "dragon",
+			commentStyle = { italic = true },
+			terminalColors = true,
 		},
 		config = true,
 	},
@@ -71,7 +73,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			transparent_background = true,
+			transparent_background = false,
 			integrations = {
 				cmp = true,
 				gitsigns = true,
@@ -91,7 +93,7 @@ return {
 		priority = 1000,
 		config = true,
 		opts = {
-			transparent_bg = true,
+			transparent_bg = false,
 			italic_comment = true,
 			show_end_of_buffer = true,
 		},
