@@ -1,0 +1,3 @@
+default_startup_script = "~/.config/sesh/scripts/default_start.sh"
+
+ 

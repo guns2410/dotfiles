@@ -13,4 +13,6 @@
 !kitty/
 !kitty/**/**
 *.bak
+!sesh/
+!sesh/**/**
 
