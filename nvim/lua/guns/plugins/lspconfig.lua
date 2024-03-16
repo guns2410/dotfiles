@@ -41,25 +41,25 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		-- lspconfig.tsserver.setup({
-		-- 	capabilities = capabilities,
-		-- 	init_options = {
-		-- 		preferences = {
-		-- 			disableSuggestions = false,
-		-- 			includeCompletionsForImportStatements = true,
-		-- 			includeCompletionsWithSnippetText = true,
-		-- 		},
-		-- 		hostInfo = "neovim",
-		-- 		maxTsServerMemory = 4096,
-		-- 	},
-		-- 	commands = {
-		-- 		OrganizeImports = {
-		-- 			organize_imports,
-		-- 			description = "Organize Imports",
-		-- 		},
-		-- 	},
-		-- 	single_file_support = true,
-		-- })
+		lspconfig.tsserver.setup({
+			capabilities = capabilities,
+			init_options = {
+				preferences = {
+					disableSuggestions = false,
+					includeCompletionsForImportStatements = true,
+					includeCompletionsWithSnippetText = true,
+				},
+				hostInfo = "neovim",
+				maxTsServerMemory = 4096,
+			},
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
+			single_file_support = true,
+		})
 
 		-- quick_lint_js config
 		lspconfig.quick_lint_js.setup({})

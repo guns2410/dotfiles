@@ -6,6 +6,7 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-file-browser.nvim",
+		{ "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
 	},
 	keys = {
 		{
@@ -73,6 +74,11 @@ return {
 			"<cmd>lua require('telescope.builtin').oldfiles()<cr>",
 			{ desc = "Buffers history" },
 		},
+		{
+			"<leader>fg",
+			"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
+			{ desc = "Live grep with args" },
+		},
 	},
 	config = function()
 		require("telescope").setup({
@@ -117,5 +123,6 @@ return {
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("ui-select")
 		require("telescope").load_extension("file_browser")
+		require("telescope").load_extension("live_grep_args")
 	end,
 }
