@@ -13,23 +13,33 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
--- config.color_scheme = "rose-pine"
-config.color_scheme = "Kanagawa (Gogh)"
+config.color_scheme = "rose-pine"
+-- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "Dracula (Gogh)"
 -- config.color_scheme = "Gruvbox Dark"
 
-config.font = wezterm.font("MesloLGLDZ Nerd Font Mono")
+config.font = wezterm.font("MesloLGL Nerd Font")
+-- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
+-- config.font = wezterm.font("UbuntuMono Nerd Font")
+-- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
 -- config.font = wezterm.font("MonoLisa", { weight = "Regular" })
 config.font_size = 14.0
--- config.line_height = 1.1
--- config.cell_width = 0.95
-config.dpi = 144.0
+-- config.line_height = 1.25
+-- config.cell_width = 1.0
+-- config.dpi = 144.0
 -- -- This increases color saturation by 50%
--- config.foreground_text_hsb = {
--- 	hue = 1.1,
--- 	saturation = 1.0,
--- 	brightness = 0.95,
--- }
+config.foreground_text_hsb = {
+	hue = 1.0,
+	saturation = 0.95,
+	brightness = 1.5,
+}
+config.inactive_pane_hsb = {
+	hue = 1.0,
+	saturation = 0.95,
+	brightness = 0.5,
+}
+config.anti_alias_custom_block_glyphs = true
+config.adjust_window_size_when_changing_font_size = false
 
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
@@ -42,23 +52,30 @@ config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = true
 -- config.font_rasterizer = "FreeType"
 config.freetype_load_target = "VerticalLcd"
--- config.freetype_render_target = 'Light'
+config.freetype_render_target = "Light"
 config.bold_brightens_ansi_colors = true
 config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-config.window_background_image = "/Users/gunjansoni/Pictures/Vivid Anime.png"
-config.window_background_image_hsb = {
-	-- Darken the background image by reducing it to 1/3rd
-	brightness = 0.017,
+local dimmer = { brightness = 0.02 }
 
-	-- You can adjust the hue by scaling its value.
-	-- a multiplier of 1.0 leaves the value unchanged.
-	hue = 1.0,
-
-	-- You can adjust the saturation also.
-	saturation = 1.0,
+config.background = {
+	{
+		source = {
+			File = "/Users/gunjansoni/Pictures/assassins-creed-valhalla-viking-raider-eivor-pc-games-3860x2160-601.jpg", -- viking
+			-- File = "/Users/gunjansoni/Pictures/Vivid Anime.png", -- anime 1
+			-- File = "/Users/gunjansoni/Pictures/Vivid Anime Wallpaper.png", -- anime 2
+			-- File = "/Users/gunjansoni/Pictures/DALL·E Anime Wallpaper.png", -- anime 3
+			-- File = "/Users/gunjansoni/Pictures/Gungrave Gore 3840x2160.jpg", -- gungore
+			-- File = "/Users/gunjansoni/Pictures/AI Generated Image Mar 25 (3).png", -- gaming 1
+			-- File = "/Users/gunjansoni/Pictures/AI Generated Image March 25 (2).png", -- gaming 1
+		},
+		repeat_x = "Mirror",
+		repeat_y = "Mirror",
+		hsb = dimmer,
+		-- attachment = { Parallax = 0.1 },
+	},
 }
 
 -- and finally, return the configuration to wezterm
