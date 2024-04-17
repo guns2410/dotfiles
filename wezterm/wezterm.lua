@@ -18,7 +18,7 @@ config.color_scheme = "rose-pine"
 -- config.color_scheme = "Dracula (Gogh)"
 -- config.color_scheme = "Gruvbox Dark"
 
-config.font = wezterm.font("MesloLGL Nerd Font")
+config.font = wezterm.font("MesloLGL Nerd Font Mono")
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font = wezterm.font("UbuntuMono Nerd Font")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
@@ -29,8 +29,8 @@ config.font_size = 14.0
 -- config.dpi = 144.0
 -- -- This increases color saturation by 50%
 config.foreground_text_hsb = {
-	hue = 1.0,
-	saturation = 0.95,
+	hue = 1,
+	saturation = 1.05,
 	brightness = 1.5,
 }
 config.inactive_pane_hsb = {
@@ -58,7 +58,7 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.02 }
+local dimmer = { brightness = 0.025 }
 
 config.background = {
 	{
