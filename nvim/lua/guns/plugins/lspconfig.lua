@@ -59,6 +59,32 @@ return {
 				},
 			},
 			single_file_support = true,
+			settings = {
+				javascript = {
+					inlayHints = {
+						includeInlayEnumMemberValueHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+					},
+				},
+				typescript = {
+					inlayHints = {
+						includeInlayEnumMemberValueHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+					},
+				},
+			},
 		})
 
 		-- quick_lint_js config
@@ -79,6 +105,15 @@ return {
 					usePlaceholders = true,
 					analyses = {
 						unusedparams = true,
+					},
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
 					},
 				},
 			},
@@ -113,6 +148,10 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
+				local client = vim.lsp.get_client_by_id(ev.data.client_id)
+				if client.server_capabilities.inlayHintProvider then
+					vim.lsp.inlay_hint.enable(ev.buf, true)
+				end
 				-- Enable completion triggered by <c-x><c-o>
 				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
@@ -135,6 +174,9 @@ return {
 				vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 				vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+				vim.keymap.set("n", "<leader>ih", function()
+					vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+				end, { desc = "Toggle Inlay Hints" })
 				-- vim.keymap.set("n", "<space>f", function()
 				-- 	vim.lsp.buf.format({ async = true })
 				-- end, opts)

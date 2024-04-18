@@ -58,7 +58,7 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.025 }
+local dimmer = { brightness = 0.015 }
 
 config.background = {
 	{
