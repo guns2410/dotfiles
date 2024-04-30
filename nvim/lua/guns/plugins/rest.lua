@@ -1,15 +1,13 @@
 return {
 	{
 		"vhyrro/luarocks.nvim",
-		branch = "go-away-python",
-		config = function()
-			require("luarocks").setup({})
-		end,
+		priority = 1000,
+		config = true,
 	},
 	{
 		"rest-nvim/rest.nvim",
 		ft = "http",
-		dependencies = { "vhyrro/luarocks.nvim" },
+		dependencies = { "luarocks.nvim" },
 		keys = {
 			{ "<leader>rrc", "<cmd>Rest run<CR>", { silent = true, desc = "[Rest] Current Buffer" } },
 			{ "<leader>rrl", "<cmd>Rest run last<CR>", { silent = true, desc = "[Rest] Re-run last" } },

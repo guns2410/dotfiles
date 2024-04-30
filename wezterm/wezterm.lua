@@ -18,7 +18,8 @@ config.color_scheme = "rose-pine"
 -- config.color_scheme = "Dracula (Gogh)"
 -- config.color_scheme = "Gruvbox Dark"
 
-config.font = wezterm.font("MesloLGL Nerd Font Mono")
+-- config.font = wezterm.font("MesloLGL Nerd Font Mono")
+config.font = wezterm.font("Inconsolata LGC Nerd Font Mono")
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font = wezterm.font("UbuntuMono Nerd Font")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
@@ -58,7 +59,7 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.015 }
+local dimmer = { brightness = 0.01 }
 
 config.background = {
 	{
