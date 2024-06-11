@@ -5,11 +5,16 @@ live_config_reload = true
 TERM = "xterm-256color"
 
 [font]
-size = 14
-normal = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Regular" }
-italic = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Italic" }
-bold = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Bold" }
-bold_italic = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Bold Italic" }
+size = 15.0
+# normal = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Regular" }
+# italic = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Italic" }
+# bold = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Bold" }
+# bold_italic = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Bold Italic" }
+normal = { "family" = "Inconsolata LGC Nerd Font Mono", "style" = "Regular" }
+italic = { "family" = "Inconsolata LGC Nerd Font Mono", "style" = "Italic" }
+bold = { "family" = "Inconsolata LGC Nerd Font Mono", "style" = "Bold" }
+bold_italic = { "family" = "Inconsolata LGC Nerd Font Mono", "style" = "Bold Italic" }
+
 # normal = { "family" = "JetbrainsMono Nerd Font", "style" = "Regular" }
 # Use this for font smoothing. Will need to log out and back in to take effect.
 # defaults write org.alacritty AppleFontSmoothing -int 0

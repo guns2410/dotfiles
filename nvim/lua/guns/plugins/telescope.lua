@@ -118,6 +118,7 @@ return {
 				-- 	height = 0.9,
 				-- },
 			}),
+			shorten_path = true,
 		})
 
 		require("telescope").load_extension("fzf")

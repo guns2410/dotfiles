@@ -25,18 +25,18 @@ config.font = wezterm.font("Inconsolata LGC Nerd Font Mono")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
 -- config.font = wezterm.font("MonoLisa", { weight = "Regular" })
 config.font_size = 14.0
--- config.line_height = 1.25
--- config.cell_width = 1.0
+-- config.line_height = 1.15
+-- config.cell_width = 1.005
 -- config.dpi = 144.0
 -- -- This increases color saturation by 50%
 config.foreground_text_hsb = {
-	hue = 1,
-	saturation = 1.05,
+	hue = 1.03,
+	saturation = 1.17,
 	brightness = 1.5,
 }
 config.inactive_pane_hsb = {
-	hue = 1.0,
-	saturation = 0.95,
+	hue = 1.03,
+	saturation = 1.15,
 	brightness = 0.5,
 }
 config.anti_alias_custom_block_glyphs = true
@@ -59,12 +59,15 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.01 }
+local dimmer = { brightness = 0.15 }
 
 config.background = {
 	{
 		source = {
-			File = "/Users/gunjansoni/Pictures/assassins-creed-valhalla-viking-raider-eivor-pc-games-3860x2160-601.jpg", -- viking
+			-- File = "/Users/gunjansoni/Pictures/w03007-small.jpg", -- jellyfish 1
+			-- File = "/Users/gunjansoni/Pictures/DALL·E Bio-luminescence Wallpaper.jpeg", -- jellyfish 2
+			File = "/Users/gunjansoni/Pictures/Jellyfish 3.jpg", -- jellyfish
+			-- File = "/Users/gunjansoni/Pictures/assassins-creed-valhalla-viking-raider-eivor-pc-games-3860x2160-601.jpg", -- viking
 			-- File = "/Users/gunjansoni/Pictures/Vivid Anime.png", -- anime 1
 			-- File = "/Users/gunjansoni/Pictures/Vivid Anime Wallpaper.png", -- anime 2
 			-- File = "/Users/gunjansoni/Pictures/DALL·E Anime Wallpaper.png", -- anime 3

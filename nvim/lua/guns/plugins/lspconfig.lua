@@ -60,18 +60,18 @@ return {
 			},
 			single_file_support = true,
 			settings = {
-				javascript = {
-					inlayHints = {
-						includeInlayEnumMemberValueHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-					},
-				},
+				-- javascript = {
+				-- 	inlayHints = {
+				-- 		includeInlayEnumMemberValueHints = true,
+				-- 		includeInlayFunctionLikeReturnTypeHints = true,
+				-- 		includeInlayFunctionParameterTypeHints = true,
+				-- 		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+				-- 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				-- 		includeInlayPropertyDeclarationTypeHints = true,
+				-- 		includeInlayVariableTypeHints = true,
+				-- 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+				-- 	},
+				-- },
 				typescript = {
 					inlayHints = {
 						includeInlayEnumMemberValueHints = true,
@@ -150,7 +150,7 @@ return {
 			callback = function(ev)
 				local client = vim.lsp.get_client_by_id(ev.data.client_id)
 				if client.server_capabilities.inlayHintProvider then
-					vim.lsp.inlay_hint.enable(ev.buf, true)
+					vim.lsp.inlay_hint.enable(true)
 				end
 				-- Enable completion triggered by <c-x><c-o>
 				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -177,7 +177,7 @@ return {
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
 				vim.keymap.set("n", "<leader>ih", function()
-					vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 				end, { desc = "Toggle Inlay Hints" })
 				-- vim.keymap.set("n", "<leader>f", function()
 				-- 	vim.lsp.buf.format({ async = true })
