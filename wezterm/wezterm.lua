@@ -18,16 +18,16 @@ config.color_scheme = "rose-pine"
 -- config.color_scheme = "Dracula (Gogh)"
 -- config.color_scheme = "Gruvbox Dark"
 
--- config.font = wezterm.font("MesloLGL Nerd Font Mono")
-config.font = wezterm.font("Inconsolata LGC Nerd Font Mono")
--- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
--- config.font = wezterm.font("UbuntuMono Nerd Font")
+-- config.font = wezterm.font("meslolgl nerd font mono")
+config.font = wezterm.font("inconsolata lgc nerd font mono")
+-- config.font = wezterm.font("jetbrainsmononl nerd font mono")
+-- config.font = wezterm.font("ubuntumono nerd font")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
 -- config.font = wezterm.font("MonoLisa", { weight = "Regular" })
 config.font_size = 14.0
 -- config.line_height = 1.15
--- config.cell_width = 1.005
--- config.dpi = 144.0
+-- config.cell_width = 1.00592.0
+-- config.dpi = 92.0
 -- -- This increases color saturation by 50%
 config.foreground_text_hsb = {
 	hue = 1.03,
@@ -52,14 +52,14 @@ config.term = "wezterm"
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = true
 -- config.font_rasterizer = "FreeType"
-config.freetype_load_target = "VerticalLcd"
-config.freetype_render_target = "Light"
+config.freetype_load_target = "Normal"
+config.freetype_render_target = "Normal"
 config.bold_brightens_ansi_colors = true
 config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.15 }
+local dimmer = { brightness = 0.10 }
 
 config.background = {
 	{
