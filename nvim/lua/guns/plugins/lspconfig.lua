@@ -202,9 +202,11 @@ return {
 			window = {
 				completion = {
 					border = "rounded",
+					side_padding = 0,
 				},
 				documentation = {
 					border = "rounded",
+					side_padding = 0,
 				},
 			},
 			snippet = {

@@ -14,18 +14,21 @@ return {
 					includeCompletionsForModuleExports = true,
 					quotePreference = "auto",
 				},
-				-- javascript = {
-				-- 	inlayHints = {
-				-- 		includeInlayEnumMemberValueHints = true,
-				-- 		includeInlayFunctionLikeReturnTypeHints = true,
-				-- 		includeInlayFunctionParameterTypeHints = true,
-				-- 		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				-- 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				-- 		includeInlayPropertyDeclarationTypeHints = true,
-				-- 		includeInlayVariableTypeHints = true,
-				-- 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				-- 	},
-				-- },
+				on_attach = function(client)
+					client.server_capabilities.semanticTokensProvider = false
+				end,
+				javascript = {
+					inlayHints = {
+						includeInlayEnumMemberValueHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+					},
+				},
 				typescript = {
 					inlayHints = {
 						includeInlayEnumMemberValueHints = true,
