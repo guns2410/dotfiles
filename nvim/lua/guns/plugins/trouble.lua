@@ -4,63 +4,55 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"nvim-telescope/telescope.nvim",
 	},
+	cmd = "Trouble",
 	keys = {
 		{
 			"<leader>xx",
-			function()
-				require("trouble").toggle()
-			end,
-			{ desc = "Toggle trouble" },
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Toggle trouble",
 		},
 		{
 			"<leader>xw",
-			function()
-				require("trouble").toggle("workspace_diagnostics")
-			end,
-			{ desc = "Toggle workspace diagnostics" },
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Toggle workspace diagnostics",
 		},
 		{
 			"<leader>xd",
-			function()
-				require("trouble").toggle("document_diagnostics")
-			end,
-			{ desc = "Toggle document diagnostics" },
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "Toggle document diagnostics",
 		},
 		{
 			"<leader>xf",
-			function()
-				require("trouble").toggle("quickfix")
-			end,
-			{ desc = "Toggle quickfix" },
+			"<cmd>Trouble qflist toggle<cr>",
+			desc = "Toggle quickfix",
 		},
 		{
 			"<leader>xl",
-			function()
-				require("trouble").toggle("loclist")
-			end,
-			{ desc = "Toggle loclist" },
+			"<cmd>Trouble loclist toggle<cr>",
+			desc = "Toggle loclist",
 		},
 		{
 			"gR",
-			function()
-				require("trouble").toggle("lsp_references")
-			end,
-			{ desc = "Toggle lsp references" },
+			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+			desc = "Toggle lsp references",
 		},
 	},
-	opts = {
-		icons = true,
-		mode = "workspace_diagnostics",
-	},
+	opts = {},
 	config = function()
-		local trouble = require("trouble.providers.telescope")
+		require("trouble").setup({})
+		local actions = require("telescope.actions")
+		local open_with_trouble = require("trouble.sources.telescope").open
+
+		-- Use this to add more results without clearing the trouble list
+		local add_to_trouble = require("trouble.sources.telescope").add
+
 		local telescope = require("telescope")
 
 		telescope.setup({
 			defaults = {
 				mappings = {
-					i = { ["<c-h>"] = trouble.open_with_trouble },
-					n = { ["<c-h>"] = trouble.open_with_trouble },
+					i = { ["<c-t>"] = open_with_trouble, ["<c-a>"] = add_to_trouble },
+					n = { ["<c-t>"] = open_with_trouble, ["<c-a>"] = add_to_trouble },
 				},
 			},
 		})
