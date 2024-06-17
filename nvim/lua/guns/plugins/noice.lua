@@ -8,6 +8,7 @@ return {
 		--   `nvim-notify` is only needed, if you want to use the notification view.
 		--   If not available, we use `mini` as the fallback
 		"rcarriga/nvim-notify",
+		"nvim-telescope/telescope.nvim",
 	},
 	config = function()
 		local filter = {
@@ -38,5 +39,6 @@ return {
 				{ filter = filter, opts = { skip = true } },
 			},
 		})
+		require("telescope").load_extension("noice")
 	end,
 }
