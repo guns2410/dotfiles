@@ -256,6 +256,8 @@ brew install zimg
 brew install zoxide
 brew install zstd
 brew install grc
+brew install powerlevel10k
+
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font
 brew install --cask font-droid-sans-mono-nerd-font

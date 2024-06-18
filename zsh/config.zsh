@@ -1,8 +1,8 @@
 plugins=(git history node npm yarn autojump aws brew colorize docker docker-compose fig zsh-autosuggestions)
 
-ZSH_THEME="bira"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -44,4 +44,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 conda config --set auto_activate_base False
+
 

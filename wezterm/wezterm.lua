@@ -63,10 +63,10 @@ local dimmer = { brightness = 0.2 }
 local imagesDir = os.getenv("HOME") .. "/.config/images/"
 
 local backgroundImages = {
-	jellyfish = imagesDir .. "/Jellyfish-3.jpg",
-	space1 = imagesDir .. "/black-space-1.jpg",
-	space2 = imagesDir .. "/black-space-2.jpg",
-	space3 = imagesDir .. "/space3.jpg",
+	jellyfish = imagesDir .. "/Jellyfish-3.png",
+	space1 = imagesDir .. "/black-space-1.png",
+	space2 = imagesDir .. "/black-space-2.png",
+	space3 = imagesDir .. "/space3.png",
 }
 
 config.background = {
