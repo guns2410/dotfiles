@@ -34,6 +34,7 @@ vim.keymap.set("n", "<leader>ggl", '<cmd>silent !tmux neww -c "$PWD" lazygit -f 
 
 vim.keymap.set("n", "<leader>ggh", function()
 	local filePath = vim.fn.expand("%:p") -- Get the full path of the current file
+	print(filePath)
 	vim.cmd('silent !tmux neww -c "$PWD" lazygit -f "' .. filePath .. '"')
 end, { silent = true })
 

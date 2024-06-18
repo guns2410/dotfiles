@@ -1,6 +1,6 @@
 -- vim.cmd([[ colorscheme kanagawa-dragon ]])
-vim.cmd([[ colorscheme rose-pine ]])
--- vim.cmd([[ colorscheme nordfox ]])
+-- vim.cmd([[ colorscheme rose-pine ]])
+vim.cmd([[ colorscheme nordfox ]])
 -- vim.cmd([[ colorscheme duskfox ]])
 -- vim.cmd([[ colorscheme material ]])
 -- vim.g.material_style = "darker"
