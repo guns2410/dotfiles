@@ -12,7 +12,7 @@ return {
 				disable_italics = false,
 				styles = {
 					bold = true,
-					italic = false,
+					italic = true,
 					transparency = true,
 				},
 				groups = {
