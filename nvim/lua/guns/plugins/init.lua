@@ -10,4 +10,6 @@ return {
 	"fatih/vim-go",
 
 	"shime/vim-livedown", -- markdown preview
+
+	"folke/twilight.nvim",
 }
