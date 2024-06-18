@@ -5,7 +5,7 @@ live_config_reload = true
 TERM = "xterm-256color"
 
 [font]
-size = 15.0
+size = 14.0
 # normal = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Regular" }
 # italic = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Italic" }
 # bold = { "family" = "MesloLGLDZ Nerd Font Mono", "style" = "Bold" }
@@ -24,9 +24,10 @@ hide_when_typing = true
 
 [window]
 decorations = "buttonless"
-dynamic_padding = true
-blur = true
+dynamic_padding = false
+blur = false
+option_as_alt = "Both"
 
 [window.padding]
 x = 0
-y = 0
+y = 5

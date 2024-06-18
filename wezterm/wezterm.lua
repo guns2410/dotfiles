@@ -59,26 +59,23 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.10 }
+local dimmer = { brightness = 0.2 }
+local imagesDir = os.getenv("HOME") .. "/.config/images/"
+
+local backgroundImages = {
+	jellyfish = imagesDir .. "/Jellyfish-3.jpg",
+	space1 = imagesDir .. "/black-space-1.jpg",
+	space2 = imagesDir .. "/black-space-2.jpg",
+	space3 = imagesDir .. "/space3.jpg",
+}
 
 config.background = {
 	{
-		source = {
-			-- File = "/Users/gunjansoni/Pictures/w03007-small.jpg", -- jellyfish 1
-			-- File = "/Users/gunjansoni/Pictures/DALL·E Bio-luminescence Wallpaper.jpeg", -- jellyfish 2
-			File = "/Users/gunjansoni/Pictures/Jellyfish 3.jpg", -- jellyfish
-			-- File = "/Users/gunjansoni/Pictures/assassins-creed-valhalla-viking-raider-eivor-pc-games-3860x2160-601.jpg", -- viking
-			-- File = "/Users/gunjansoni/Pictures/Vivid Anime.png", -- anime 1
-			-- File = "/Users/gunjansoni/Pictures/Vivid Anime Wallpaper.png", -- anime 2
-			-- File = "/Users/gunjansoni/Pictures/DALL·E Anime Wallpaper.png", -- anime 3
-			-- File = "/Users/gunjansoni/Pictures/Gungrave Gore 3840x2160.jpg", -- gungore
-			-- File = "/Users/gunjansoni/Pictures/AI Generated Image Mar 25 (3).png", -- gaming 1
-			-- File = "/Users/gunjansoni/Pictures/AI Generated Image March 25 (2).png", -- gaming 1
-		},
+		source = { File = backgroundImages.space2 },
 		repeat_x = "Mirror",
 		repeat_y = "Mirror",
 		hsb = dimmer,
-		-- attachment = { Parallax = 0.1 },
+		attachment = { Parallax = 0.1 },
 	},
 }
 

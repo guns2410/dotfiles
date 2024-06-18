@@ -20,4 +20,5 @@
 !alacritty/**/**
 !install/
 !install/**/**
-
+!images/
+!images/**/**
