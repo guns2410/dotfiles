@@ -22,3 +22,5 @@
 !install/**/**
 !images/
 !images/**/**
+!lazygit/
+!lazygit/config.yml
