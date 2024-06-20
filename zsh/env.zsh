@@ -37,3 +37,4 @@ export ZSH="/Users/gunjansoni/.oh-my-zsh"
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 export LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit-themes/themes/mocha/lavender.yml"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"

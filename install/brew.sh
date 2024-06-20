@@ -256,7 +256,9 @@ brew install zimg
 brew install zoxide
 brew install zstd
 brew install grc
-brew install powerlevel10k
+brew install starship
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font

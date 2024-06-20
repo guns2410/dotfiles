@@ -14,7 +14,7 @@ return {
 		local filter = {
 			event = "msg_show",
 			["not"] = {
-				kind = { "inlay_hint", "inlayhint" },
+				kind = { "inlay_hint", "inlayhint", "Inlay Hints" },
 			},
 		}
 		require("noice").setup({

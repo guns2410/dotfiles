@@ -24,3 +24,5 @@
 !images/**/**
 !lazygit/
 !lazygit/config.yml
+!starship/
+!starship/**/**
