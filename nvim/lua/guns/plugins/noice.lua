@@ -10,6 +10,18 @@ return {
 		"rcarriga/nvim-notify",
 		"nvim-telescope/telescope.nvim",
 	},
+	keys = {
+		{
+			"<leader>mo",
+			"<cmd>Telescope noice<CR>",
+			{ desc = "Open noice" },
+		},
+		{
+			"<leader>mc",
+			"<cmd>Noice dismiss<CR>",
+			{ desc = "Dismiss noice" },
+		},
+	},
 	config = function()
 		local filter = {
 			event = "msg_show",
