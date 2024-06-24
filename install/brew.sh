@@ -11,7 +11,6 @@ brew install aom
 brew install aribb24
 brew install assimp
 brew install autoconf
-brew install autojump
 brew install bat
 brew install boost
 brew install brotli
