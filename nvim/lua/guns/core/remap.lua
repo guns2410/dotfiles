@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>w", "<C-w>")
 vim.keymap.set("n", "<leader>ggu", '<cmd>silent !tmux neww -c "$PWD" lazygit<CR>')
 vim.keymap.set("n", "<leader>ggl", '<cmd>silent !tmux neww -c "$PWD" lazygit -f "$PWD"<CR>')
+vim.keymap.set("i", "jk", "<Esc>", { noremap = true })
 
 vim.keymap.set("n", "<leader>ggh", function()
 	local filePath = vim.fn.expand("%:p") -- Get the full path of the current file
