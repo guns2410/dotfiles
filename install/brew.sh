@@ -276,9 +276,16 @@ brew install --cask sfdx
 brew install --cask stats
 brew install --cask warp
 brew install --cask wezterm
+brew install --cask dropzone
+brew install --cask hazeover
+brew install --cask aldente
+brew install --cask raycast
+brew install --cask httpie
+brew install --cask moom
 
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask brave-browser
 brew install --cask slack
 brew install --cask docker
+brew install --cask arc
