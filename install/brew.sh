@@ -276,7 +276,6 @@ brew install --cask sfdx
 brew install --cask stats
 brew install --cask warp
 brew install --cask wezterm
-brew isntall --cask hazeover
 
 brew install --cask google-chrome
 brew install --cask firefox
