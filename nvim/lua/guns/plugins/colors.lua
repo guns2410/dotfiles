@@ -5,6 +5,7 @@ return {
 		name = "rose-pine",
 		priority = 1000,
 		config = function()
+			local palette = require("rose-pine.palette")
 			require("rose-pine").setup({
 				disable_background = true,
 				variant = "auto",
@@ -14,6 +15,12 @@ return {
 					bold = true,
 					italic = true,
 					transparency = true,
+				},
+				enable = {
+					transparency = true,
+				},
+				highlight_groups = {
+					LspInlayHint = { bg = palette.none, blend = 99, fg = palette.muted },
 				},
 				groups = {
 					border = "muted",

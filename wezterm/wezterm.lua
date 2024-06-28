@@ -75,7 +75,7 @@ config.background = {
 		repeat_x = "Mirror",
 		repeat_y = "Mirror",
 		hsb = dimmer,
-		attachment = { Parallax = 0.1 },
+		-- attachment = { Parallax = 0.1 },
 	},
 }
 

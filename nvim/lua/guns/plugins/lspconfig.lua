@@ -33,59 +33,59 @@ return {
 		})
 
 		-- tsserver config
-		local function organize_imports()
-			local params = {
-				command = "_typescript.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-			}
-			vim.lsp.buf.execute_command(params)
-		end
+		-- local function organize_imports()
+		-- 	local params = {
+		-- 		command = "_typescript.organizeImports",
+		-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+		-- 	}
+		-- 	vim.lsp.buf.execute_command(params)
+		-- end
 
-		lspconfig.tsserver.setup({
-			capabilities = capabilities,
-			init_options = {
-				preferences = {
-					disableSuggestions = false,
-					includeCompletionsForImportStatements = true,
-					includeCompletionsWithSnippetText = true,
-				},
-				hostInfo = "neovim",
-				maxTsServerMemory = 4096,
-			},
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
-			single_file_support = true,
-			settings = {
-				-- javascript = {
-				-- 	inlayHints = {
-				-- 		includeInlayEnumMemberValueHints = true,
-				-- 		includeInlayFunctionLikeReturnTypeHints = true,
-				-- 		includeInlayFunctionParameterTypeHints = true,
-				-- 		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				-- 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				-- 		includeInlayPropertyDeclarationTypeHints = true,
-				-- 		includeInlayVariableTypeHints = true,
-				-- 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				-- 	},
-				-- },
-				typescript = {
-					inlayHints = {
-						includeInlayEnumMemberValueHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-					},
-				},
-			},
-		})
+		-- lspconfig.tsserver.setup({
+		-- 	capabilities = capabilities,
+		-- 	init_options = {
+		-- 		preferences = {
+		-- 			disableSuggestions = false,
+		-- 			includeCompletionsForImportStatements = true,
+		-- 			includeCompletionsWithSnippetText = true,
+		-- 		},
+		-- 		hostInfo = "neovim",
+		-- 		maxTsServerMemory = 4096,
+		-- 	},
+		-- 	commands = {
+		-- 		OrganizeImports = {
+		-- 			organize_imports,
+		-- 			description = "Organize Imports",
+		-- 		},
+		-- 	},
+		-- 	single_file_support = true,
+		-- 	settings = {
+		-- 		-- javascript = {
+		-- 		-- 	inlayHints = {
+		-- 		-- 		includeInlayEnumMemberValueHints = true,
+		-- 		-- 		includeInlayFunctionLikeReturnTypeHints = true,
+		-- 		-- 		includeInlayFunctionParameterTypeHints = true,
+		-- 		-- 		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+		-- 		-- 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+		-- 		-- 		includeInlayPropertyDeclarationTypeHints = true,
+		-- 		-- 		includeInlayVariableTypeHints = true,
+		-- 		-- 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+		-- 		-- 	},
+		-- 		-- },
+		-- 		typescript = {
+		-- 			inlayHints = {
+		-- 				includeInlayEnumMemberValueHints = true,
+		-- 				includeInlayFunctionLikeReturnTypeHints = true,
+		-- 				includeInlayFunctionParameterTypeHints = true,
+		-- 				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+		-- 				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+		-- 				includeInlayPropertyDeclarationTypeHints = true,
+		-- 				includeInlayVariableTypeHints = true,
+		-- 				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		-- quick_lint_js config
 		lspconfig.quick_lint_js.setup({})

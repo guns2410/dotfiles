@@ -5,6 +5,8 @@ return {
 	config = function()
 		require("typescript-tools").setup({
 			settings = {
+				separate_diagnostic_server = true,
+				code_lens = "off",
 				jsx_close_tag = {
 					enable = true,
 					filetypes = { "javascriptreact", "typescriptreact" },
@@ -15,7 +17,7 @@ return {
 					quotePreference = "auto",
 				},
 				on_attach = function(client)
-					client.server_capabilities.semanticTokensProvider = false
+					client.server_capabilities.semanticTokensProvider = true
 				end,
 				javascript = {
 					inlayHints = {

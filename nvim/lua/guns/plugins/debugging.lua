@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"theHamsta/nvim-dap-virtual-text",
-		"mfussenegger/nvim-dap-python",
+		-- "mfussenegger/nvim-dap-python",
 		"Pocco81/DAPInstall.nvim",
 	},
 	keys = {
