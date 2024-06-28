@@ -165,7 +165,7 @@ brew install mpfr
 brew install mpg123
 brew install msgpack
 brew install ncurses
-brew install neovim
+brew install --head neovim
 brew install netcdf
 brew install netpbm
 brew install nettle
