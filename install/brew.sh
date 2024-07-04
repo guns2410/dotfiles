@@ -216,7 +216,7 @@ brew install ripgrep
 brew install rtmpdump
 brew install rubberband
 brew install sdl2
-brew install sesh
+brew install joshmedeski/sesh/sesh
 brew install shared-mime-info
 brew install skhd
 brew install snappy
@@ -258,6 +258,9 @@ brew install grc
 brew install starship
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install golang
+brew install maven
+brew isntall pnpm
 
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font

@@ -48,6 +48,7 @@ return {
 					"rust",
 					"python",
 					"vim",
+					"java",
 				},
 				incremental_selection = {
 					enable = true,

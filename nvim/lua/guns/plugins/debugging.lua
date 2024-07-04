@@ -5,6 +5,7 @@ return {
 		"theHamsta/nvim-dap-virtual-text",
 		-- "mfussenegger/nvim-dap-python",
 		"Pocco81/DAPInstall.nvim",
+		"nvim-neotest/nvim-nio",
 	},
 	keys = {
 		{ "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" } },
