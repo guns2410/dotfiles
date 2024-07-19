@@ -11,6 +11,7 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		"onsails/lspkind.nvim",
 		"mfussenegger/nvim-jdtls",
+		{ "mrcjkb/rustaceanvim", version = "^4", lazy = false },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -20,7 +21,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		-- Default lsp config
-		local servers = { "rust_analyzer", "jedi_language_server", "pylsp" }
+		local servers = { "jedi_language_server", "pylsp" }
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
 				capabilities = capabilities,

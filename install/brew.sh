@@ -261,6 +261,7 @@ brew install zsh-syntax-highlighting
 brew install golang
 brew install maven
 brew isntall pnpm
+brew install helm
 
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font
@@ -285,6 +286,7 @@ brew install --cask aldente
 brew install --cask raycast
 brew install --cask httpie
 brew install --cask moom
+brew install --cask keycastr
 
 brew install --cask google-chrome
 brew install --cask firefox

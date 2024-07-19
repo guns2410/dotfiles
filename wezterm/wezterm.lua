@@ -27,7 +27,7 @@ config.font = wezterm.font("inconsolata lgc nerd font mono")
 config.font_size = 14.0
 -- config.line_height = 1.15
 -- config.cell_width = 1.00592.0
--- config.dpi = 92.0
+config.dpi = 144
 -- -- This increases color saturation by 50%
 config.foreground_text_hsb = {
 	hue = 1.03,
@@ -48,7 +48,7 @@ config.webgpu_power_preference = "HighPerformance"
 config.scrollback_lines = 3500
 config.window_decorations = "RESIZE"
 
-config.term = "wezterm"
+config.term = "xterm-256color"
 config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = true
 -- config.font_rasterizer = "FreeType"
@@ -71,7 +71,7 @@ local backgroundImages = {
 
 config.background = {
 	{
-		source = { File = backgroundImages.space2 },
+		source = { File = backgroundImages.jellyfish },
 		repeat_x = "Mirror",
 		repeat_y = "Mirror",
 		hsb = dimmer,
