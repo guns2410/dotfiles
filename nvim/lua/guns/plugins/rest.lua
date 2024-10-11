@@ -7,7 +7,7 @@ return {
 	{
 		"rest-nvim/rest.nvim",
 		ft = "http",
-		enabled = false,
+		enabled = true,
 		dependencies = { "luarocks.nvim" },
 		keys = {
 			{ "<leader>rrc", "<cmd>Rest run<CR>", { silent = true, desc = "[Rest] Current Buffer" } },

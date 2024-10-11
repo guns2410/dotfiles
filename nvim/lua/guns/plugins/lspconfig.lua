@@ -43,7 +43,7 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		lspconfig.tsserver.setup({
+		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 			init_options = {
 				preferences = {
