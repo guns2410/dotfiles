@@ -19,20 +19,21 @@ config.color_scheme = "rose-pine"
 -- config.color_scheme = "Gruvbox Dark"
 
 -- config.font = wezterm.font("meslolgl nerd font mono")
-config.font = wezterm.font("inconsolata lgc nerd font mono")
--- config.font = wezterm.font("jetbrainsmononl nerd font mono")
+-- config.font = wezterm.font("inconsolata lgc nerd font mono")
+config.font = wezterm.font("jetbrainsmononl nerd font mono")
 -- config.font = wezterm.font("ubuntumono nerd font")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
 -- config.font = wezterm.font("MonoLisa", { weight = "Regular" })
-config.font_size = 14.0
--- config.line_height = 1.15
--- config.cell_width = 1.00592.0
-config.dpi = 144
+config.font_size = 16.0
+-- config.line_height = 1.015
+-- config.cell_width = 1.00592
+-- config.dpi = 72.0
+-- config.dpi = 144.0
 -- -- This increases color saturation by 50%
 config.foreground_text_hsb = {
 	hue = 1.03,
-	saturation = 1.17,
-	brightness = 1.5,
+	saturation = 1.07,
+	brightness = 1.15,
 }
 config.inactive_pane_hsb = {
 	hue = 1.03,
@@ -59,7 +60,7 @@ config.ime_preedit_rendering = "System"
 config.macos_forward_to_ime_modifier_mask = "SHIFT"
 config.native_macos_fullscreen_mode = true
 
-local dimmer = { brightness = 0.2 }
+local dimmer = { brightness = 0.15 }
 local imagesDir = os.getenv("HOME") .. "/.config/images/"
 
 local backgroundImages = {
@@ -69,15 +70,15 @@ local backgroundImages = {
 	space3 = imagesDir .. "/space3.png",
 }
 
-config.background = {
-	{
-		source = { File = backgroundImages.jellyfish },
-		repeat_x = "Mirror",
-		repeat_y = "Mirror",
-		hsb = dimmer,
-		-- attachment = { Parallax = 0.1 },
-	},
-}
+-- config.background = {
+-- 	{
+-- 		source = { File = backgroundImages.jellyfish },
+-- 		repeat_x = "Mirror",
+-- 		repeat_y = "Mirror",
+-- 		hsb = dimmer,
+-- 		-- attachment = { Parallax = 0.1 },
+-- 	},
+-- }
 
 -- and finally, return the configuration to wezterm
 return config

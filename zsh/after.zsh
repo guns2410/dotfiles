@@ -14,3 +14,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+source <(helm completion zsh)

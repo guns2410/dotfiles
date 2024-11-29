@@ -7,33 +7,32 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-file-browser.nvim",
 		{ "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
-		"ThePrimeagen/git-worktree.nvim",
 	},
 	keys = {
 		{
 			"<leader>pf",
 			":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-			{ desc = "Find files" },
+			desc = "Find files",
 		},
 		{
 			"<C-p>",
 			"<cmd>lua require('telescope.builtin').git_files()<cr>",
-			{ desc = "Find in git files" },
+			desc = "Find in git files",
 		},
 		{
 			"<leader>ps",
 			"<cmd>lua require('telescope.builtin').grep_string()<cr>",
-			{ desc = "Project search for a string" },
+			desc = "Project search for a string",
 		},
 		{
 			"<leader>o",
 			"<cmd>lua require('telescope.builtin').oldfiles()<cr>",
-			{ desc = "Recent files" },
+			desc = "Recent files",
 		},
 		{
 			"<leader>O",
 			"<cmd>lua require('telescope.builtin').buffers()<cr>",
-			{ desc = "Recent buffers" },
+			desc = "Recent buffers",
 		},
 		{
 			"<leader>/",

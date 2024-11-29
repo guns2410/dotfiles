@@ -5,23 +5,23 @@ return {
 		name = "rose-pine",
 		priority = 1000,
 		config = function()
-			local palette = require("rose-pine.palette")
+			-- local palette = require("rose-pine.palette")
 			require("rose-pine").setup({
-				disable_background = true,
+				disable_background = false,
 				variant = "auto",
 				bold_vert_split = true,
 				disable_italics = false,
 				styles = {
 					bold = true,
 					italic = true,
-					transparency = true,
+					transparency = false,
 				},
 				enable = {
-					transparency = true,
+					transparency = false,
 				},
-				highlight_groups = {
-					LspInlayHint = { bg = palette.none, blend = 99, fg = palette.muted },
-				},
+				-- highlight_groups = {
+				-- 	LspInlayHint = { bg = palette.none, blend = 99, fg = palette.muted },
+				-- },
 				groups = {
 					border = "muted",
 					link = "iris",
@@ -71,7 +71,7 @@ return {
 
 			require("tokyonight").setup({
 				style = "night",
-				transparent = true,
+				transparent = false,
 				-- on_colors = function(colors)
 				-- 	colors.bg = bg
 				-- 	colors.bg_dark = bg_dark
@@ -98,7 +98,7 @@ return {
 		priority = 1000,
 		opts = {
 			undercurl = true,
-			transparent = true,
+			transparent = false,
 			dimInactive = false,
 			theme = "dragon",
 			commentStyle = { italic = true },
@@ -111,7 +111,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			transparent_background = true,
+			transparent_background = false,
 			show_end_of_buffer = true,
 			term_colors = true,
 			default_integrations = true,
@@ -155,7 +155,7 @@ return {
 		priority = 1000,
 		config = true,
 		opts = {
-			transparent_bg = true,
+			transparent_bg = false,
 			italic_comment = true,
 			show_end_of_buffer = true,
 		},
@@ -166,7 +166,7 @@ return {
 		config = function()
 			require("nightfox").setup({
 				options = {
-					transparent = true,
+					transparent = false,
 					terminal_colors = true,
 					styles = {
 						comments = "italic",
@@ -266,7 +266,7 @@ return {
 			disable = {
 				colored_cursor = false, -- Disable the colored cursor
 				borders = false, -- Disable borders between verticaly split windows
-				background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+				background = false, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
 				term_colors = false, -- Prevent the theme from setting terminal colors
 				eob_lines = false, -- Hide the end-of-buffer lines
 			},

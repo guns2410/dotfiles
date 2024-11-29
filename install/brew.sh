@@ -294,3 +294,4 @@ brew install --cask brave-browser
 brew install --cask slack
 brew install --cask docker
 brew install --cask arc
+brew install --cask agenda

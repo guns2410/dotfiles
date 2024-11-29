@@ -23,9 +23,9 @@ export FORCE_COLOR=1
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nvim'
+   export EDITOR='vim'
 else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
 fi
 
 # Path to your oh-my-zsh installation.
