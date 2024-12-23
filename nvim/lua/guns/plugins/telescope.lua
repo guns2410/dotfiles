@@ -117,7 +117,7 @@ return {
 				-- 	width = 0.9,
 				-- 	height = 0.9,
 				-- },
-				path_display = { "truncate" },
+				-- path_display = { "truncate" },
 			}),
 			-- shorten_path = true,
 		})
