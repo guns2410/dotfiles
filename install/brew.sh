@@ -262,6 +262,7 @@ brew install golang
 brew install maven
 brew isntall pnpm
 brew install helm
+brew install ghostty
 
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font
