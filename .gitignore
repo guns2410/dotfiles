@@ -26,3 +26,5 @@
 !lazygit/config.yml
 !starship/
 !starship/**/**
+!ghostty/
+!ghostty/**/**

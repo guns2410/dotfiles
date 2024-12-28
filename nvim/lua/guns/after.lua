@@ -6,3 +6,5 @@
 -- vim.g.material_style = "darker"
 -- vim.cmd([[ colorscheme tokyonight-night ]])
 vim.cmd([[ colorscheme catppuccin-mocha ]])
+
+require("guns.core.remap")

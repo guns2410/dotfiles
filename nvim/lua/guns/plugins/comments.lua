@@ -30,6 +30,11 @@ return {
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
 		},
+		keys = {
+			{ "]t", "<cmd>lua require('todo-comments').jump_next()<cr>", desc = "Next todo comment" },
+			{ "[t", "<cmd>lua require('todo-comments').jump_prev()<cr>", desc = "Previous todo comment" },
+			{ "<leader>gt", "<cmd>TodoTelescope<cr>", desc = "Search todo comments" },
+		},
 		config = function()
 			require("todo-comments").setup({
 				signs = true, -- show icons in the signs column
@@ -47,7 +52,7 @@ return {
 						color = "error",
 						alt = { "DEPRECATED", "OBSOLETE", "deprecated", "obsolete" },
 					},
-					TODO = { icon = " ", color = "info" },
+					TODO = { icon = " ", color = "info", alt = { "TODO", "TASK", "todo" } },
 					HACK = { icon = " ", color = "warning" },
 					WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 					PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },

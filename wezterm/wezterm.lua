@@ -24,7 +24,7 @@ config.font = wezterm.font("jetbrainsmononl nerd font mono")
 -- config.font = wezterm.font("ubuntumono nerd font")
 -- config.font = wezterm.font_with_fallback({ "MonoLisa", "MesloLGLDZ Nerd Font Mono" })
 -- config.font = wezterm.font("MonoLisa", { weight = "Regular" })
-config.font_size = 16.0
+config.font_size = 14.0
 -- config.line_height = 1.015
 -- config.cell_width = 1.00592
 -- config.dpi = 72.0
