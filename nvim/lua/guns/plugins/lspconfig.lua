@@ -45,6 +45,7 @@ return {
 
 		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
+			root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 			init_options = {
 				preferences = {
 					disableSuggestions = false,
@@ -60,33 +61,7 @@ return {
 					description = "Organize Imports",
 				},
 			},
-			single_file_support = true,
-			settings = {
-				-- javascript = {
-				-- 	inlayHints = {
-				-- 		includeInlayEnumMemberValueHints = true,
-				-- 		includeInlayFunctionLikeReturnTypeHints = true,
-				-- 		includeInlayFunctionParameterTypeHints = true,
-				-- 		includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				-- 		includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				-- 		includeInlayPropertyDeclarationTypeHints = true,
-				-- 		includeInlayVariableTypeHints = true,
-				-- 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				-- 	},
-				-- },
-				typescript = {
-					inlayHints = {
-						includeInlayEnumMemberValueHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-					},
-				},
-			},
+			single_file_support = false,
 		})
 
 		-- quick_lint_js config
@@ -144,6 +119,29 @@ return {
 		keymap.set("n", "gn", vim.diagnostic.goto_next)
 		keymap.set("n", "gp", vim.diagnostic.goto_prev)
 		keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = vim.api.nvim_create_augroup("organize_imports", {}),
+			pattern = "*.ts,*.tsx",
+			callback = function()
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = { only = { "source.addMissingImports.ts" }, diagnostics = {} },
+				})
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = { only = { "source.removeUnused.ts" }, diagnostics = {} },
+				})
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = { only = { "source.removeUnusedImports.ts" }, diagnostics = {} },
+				})
+				vim.lsp.buf.code_action({
+					apply = true,
+					context = { only = { "source.fixAll" }, diagnostics = {} },
+				})
+			end,
+		})
 
 		-- Use LspAttach autocommand to only map the following keys
 		-- after the language server attaches to the current buffer

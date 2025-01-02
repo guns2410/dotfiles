@@ -3,13 +3,27 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	enabled = true,
 	config = function()
+		local function organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+		vim.keymap.set("n", "<leader>gi", organize_imports)
 		require("typescript-tools").setup({
 			settings = {
 				separate_diagnostic_server = true,
 				code_lens = "off",
 				jsx_close_tag = {
-					enable = true,
+					enable = false,
 					filetypes = { "javascriptreact", "typescriptreact" },
+				},
+				commands = {
+					OrganizeImports = {
+						organize_imports,
+						description = "Organize Imports",
+					},
 				},
 				tsserver_file_preferences = {
 					includeInlayParameterNameHints = "all",
