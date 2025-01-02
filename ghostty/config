@@ -1,11 +1,12 @@
-font-family = "MesloLGL Nerd Font Mono"
-font-size = 13.5
+font-family = JetbrainsMonoNL
+font-size = 14
+bold-is-bright = true
 
-font-thicken = false
+font-thicken = true
 adjust-cell-height = 5%
 
 #theme = catppuccin-mocha
-theme = tokyonight
+theme = rose-pine
 
 background-opacity = 0.9
 background-blur-radius = 20

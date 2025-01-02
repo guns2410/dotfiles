@@ -7,17 +7,17 @@ return {
 		config = function()
 			-- local palette = require("rose-pine.palette")
 			require("rose-pine").setup({
-				disable_background = false,
-				variant = "auto",
+				disable_background = true,
+				variant = "moon",
 				bold_vert_split = true,
 				disable_italics = false,
 				styles = {
 					bold = true,
 					italic = true,
-					transparency = false,
+					transparency = true,
 				},
 				enable = {
-					transparency = false,
+					transparency = true,
 				},
 				-- highlight_groups = {
 				-- 	LspInlayHint = { bg = palette.none, blend = 99, fg = palette.muted },
@@ -111,7 +111,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			transparent_background = false,
+			transparent_background = true,
 			show_end_of_buffer = true,
 			term_colors = true,
 			default_integrations = true,
