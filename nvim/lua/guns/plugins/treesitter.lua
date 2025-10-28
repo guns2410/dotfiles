@@ -49,6 +49,7 @@ return {
 					"python",
 					"vim",
 					"java",
+					"zig",
 				},
 				incremental_selection = {
 					enable = true,

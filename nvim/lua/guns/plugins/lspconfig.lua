@@ -11,7 +11,8 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		"onsails/lspkind.nvim",
 		"mfussenegger/nvim-jdtls",
-		{ "mrcjkb/rustaceanvim", version = "^4", lazy = false },
+		"ziglang/zig.vim",
+		-- { "mrcjkb/rustaceanvim", version = "^4", lazy = false },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -110,6 +111,20 @@ return {
 							[vim.fn.stdpath("config") .. "/lua"] = true,
 						},
 					},
+				},
+			},
+		})
+
+		-- zig config
+		lspconfig.zls.setup({
+			capabilities = capabilities,
+			cmd = { "" },
+			filetypes = { "zig", "zir" },
+			root_dir = lspconfig.util.root_pattern("build.zig", "zig.mod", ".git"),
+			single_file_support = true,
+			settings = {
+				zig = {
+					autoformat = true,
 				},
 			},
 		})

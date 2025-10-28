@@ -6,6 +6,7 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
+		enable = false,
 		opts = {
 			debug = false, -- Enable debugging
 			-- See Configuration section for rest
