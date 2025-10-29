@@ -1,29 +1,31 @@
-font-family = MesloLGSDZ Nerd Font Mono
+font-family = FiraCode Nerd Font Mono
+#font-family = JetBrainsMono Nerd Font Mono
 font-size = 14
 bold-is-bright = true
 font-feature = feat,liga,zero
 
+adjust-cell-height = 8%
 font-thicken = true
-font-thicken-strength = 100
-font-synthetic-style = no-italic,no-bold-italic
+font-thicken-strength = 80
 
 theme = dark:Rose Pine,light:Rose Pine Dawn
 
 background-opacity = 1
 background-blur-radius = 20
 background-image = ~/.config/Terminal-Backgrounds/misc/ow.jpg
-background-image-opacity = 0.25
+background-image-opacity = 0.18
 background-image-fit = cover
 
 window-decoration = true
 window-theme = dark
 window-save-state = always
 window-colorspace = display-p3
-window-padding-x = 10
+window-padding-x = 12
+window-padding-y = 10
 
-adjust-cell-height = 20%
-
-#shell-integration-features = no-title
+cursor-style = bar
+selection-background = #403d52
+selection-foreground = #e0def4
 
 macos-titlebar-style = tabs
 macos-option-as-alt = true
