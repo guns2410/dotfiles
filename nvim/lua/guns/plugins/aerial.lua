@@ -1,3 +1,4 @@
+-- A plugin for better code navigation. Shows a tree like structure of your code.
 return {
 	"stevearc/aerial.nvim",
 	opts = {},
