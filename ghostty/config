@@ -4,12 +4,12 @@ font-size = 14
 bold-is-bright = true
 font-feature = feat,liga,zero
 
-adjust-cell-height = 8%
 font-thicken = true
 font-thicken-strength = 80
 
 theme = dark:Rose Pine,light:Rose Pine Dawn
 
+background = #000000
 background-opacity = 1
 background-blur-radius = 20
 background-image = ~/.config/Terminal-Backgrounds/misc/ow.jpg
