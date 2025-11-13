@@ -8,126 +8,131 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
 		"onsails/lspkind.nvim",
 		"mfussenegger/nvim-jdtls",
 		"ziglang/zig.vim",
-		-- { "mrcjkb/rustaceanvim", version = "^4", lazy = false },
+		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "folke/lazydev.nvim", opts = {} },
 	},
 	config = function()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 		local util = require("lspconfig/util")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+		vim.lsp.config("*", {
+			capabilities = capabilities,
+		})
+
 		local keymap = vim.keymap -- for conciseness
 
-		-- Default lsp config
-		local servers = { "jedi_language_server", "pylsp" }
-		for _, lsp in ipairs(servers) do
-			lspconfig[lsp].setup({
-				capabilities = capabilities,
-			})
-		end
-
-		-- biome config
-		lspconfig.biome.setup({
-			capabilities = capabilities,
-			root_dir = util.root_pattern("biome.json", ".git", "package.json", "node_modules"),
-		})
-
-		-- tsserver config
-		local function organize_imports()
-			local params = {
-				command = "_typescript.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-
-		lspconfig.ts_ls.setup({
-			capabilities = capabilities,
-			root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-			init_options = {
-				preferences = {
-					disableSuggestions = false,
-					includeCompletionsForImportStatements = true,
-					includeCompletionsWithSnippetText = true,
-				},
-				hostInfo = "neovim",
-				maxTsServerMemory = 4096,
-			},
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
-			single_file_support = false,
-		})
-
-		-- quick_lint_js config
-		lspconfig.quick_lint_js.setup({})
-
-		-- ast_grep config
-		lspconfig.ast_grep.setup({})
-
-		-- gopls config
-		lspconfig.gopls.setup({
-			capabilities = capabilities,
-			cmd = { "gopls" },
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-			settings = {
-				gopls = {
-					completeUnimported = true,
-					usePlaceholders = true,
-					analyses = {
-						unusedparams = true,
-					},
-					hints = {
-						assignVariableTypes = true,
-						compositeLiteralFields = true,
-						compositeLiteralTypes = true,
-						constantValues = true,
-						functionTypeParameters = true,
-						parameterNames = true,
-						rangeVariableTypes = true,
-					},
-				},
-			},
-		})
-
-		-- lua_ls config
-		lspconfig.lua_ls.setup({
-			capabilities = capabilities,
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
-				},
-			},
-		})
-
-		-- zig config
-		lspconfig.zls.setup({
-			capabilities = capabilities,
-			cmd = { "" },
-			filetypes = { "zig", "zir" },
-			root_dir = lspconfig.util.root_pattern("build.zig", "zig.mod", ".git"),
-			single_file_support = true,
-			settings = {
-				zig = {
-					autoformat = true,
-				},
-			},
-		})
+		-- -- Default lsp config
+		-- local servers = { "jedi_language_server", "pylsp" }
+		-- for _, lsp in ipairs(servers) do
+		-- 	lspconfig[lsp].setup({
+		-- 		capabilities = capabilities,
+		-- 	})
+		-- end
+		--
+		-- -- biome config
+		-- lspconfig.biome.setup({
+		-- 	capabilities = capabilities,
+		-- 	root_dir = util.root_pattern("biome.json", ".git", "package.json", "node_modules"),
+		-- })
+		--
+		-- -- tsserver config
+		-- local function organize_imports()
+		-- 	local params = {
+		-- 		command = "_typescript.organizeImports",
+		-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+		-- 	}
+		-- 	vim.lsp.buf.execute_command(params)
+		-- end
+		--
+		-- lspconfig.ts_ls.setup({
+		-- 	capabilities = capabilities,
+		-- 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+		-- 	init_options = {
+		-- 		preferences = {
+		-- 			disableSuggestions = false,
+		-- 			includeCompletionsForImportStatements = true,
+		-- 			includeCompletionsWithSnippetText = true,
+		-- 		},
+		-- 		hostInfo = "neovim",
+		-- 		maxTsServerMemory = 4096,
+		-- 	},
+		-- 	commands = {
+		-- 		OrganizeImports = {
+		-- 			organize_imports,
+		-- 			description = "Organize Imports",
+		-- 		},
+		-- 	},
+		-- 	single_file_support = false,
+		-- })
+		--
+		-- -- quick_lint_js config
+		-- lspconfig.quick_lint_js.setup({})
+		--
+		-- -- ast_grep config
+		-- lspconfig.ast_grep.setup({})
+		--
+		-- -- gopls config
+		-- lspconfig.gopls.setup({
+		-- 	capabilities = capabilities,
+		-- 	cmd = { "gopls" },
+		-- 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+		-- 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+		-- 	settings = {
+		-- 		gopls = {
+		-- 			completeUnimported = true,
+		-- 			usePlaceholders = true,
+		-- 			analyses = {
+		-- 				unusedparams = true,
+		-- 			},
+		-- 			hints = {
+		-- 				assignVariableTypes = true,
+		-- 				compositeLiteralFields = true,
+		-- 				compositeLiteralTypes = true,
+		-- 				constantValues = true,
+		-- 				functionTypeParameters = true,
+		-- 				parameterNames = true,
+		-- 				rangeVariableTypes = true,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		--
+		-- -- lua_ls config
+		-- lspconfig.lua_ls.setup({
+		-- 	capabilities = capabilities,
+		-- 	settings = {
+		-- 		Lua = {
+		-- 			diagnostics = {
+		-- 				globals = { "vim" },
+		-- 			},
+		-- 			workspace = {
+		-- 				library = {
+		-- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+		-- 					[vim.fn.stdpath("config") .. "/lua"] = true,
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		--
+		-- -- zig config
+		-- lspconfig.zls.setup({
+		-- 	capabilities = capabilities,
+		-- 	cmd = { "" },
+		-- 	filetypes = { "zig", "zir" },
+		-- 	root_dir = lspconfig.util.root_pattern("build.zig", "zig.mod", ".git"),
+		-- 	single_file_support = true,
+		-- 	settings = {
+		-- 		zig = {
+		-- 			autoformat = true,
+		-- 		},
+		-- 	},
+		-- })
 
 		-- global mappings
 		keymap.set("n", "gl", vim.diagnostic.open_float)

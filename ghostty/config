@@ -1,18 +1,19 @@
-font-family = FiraCode Nerd Font Mono
-#font-family = JetBrainsMono Nerd Font Mono
-font-size = 14
+# font-family = FiraCode Nerd Font Mono
+# font-family = JetBrainsMono Nerd Font Mono
+# font-family = MesloLGS Nerd Font Mono
+font-size = 15
 bold-is-bright = true
 font-feature = feat,liga,zero
 
 font-thicken = true
-font-thicken-strength = 80
+font-thicken-strength = 60
 
 theme = dark:Rose Pine,light:Rose Pine Dawn
 
 background = #000000
 background-opacity = 1
 background-blur-radius = 20
-background-image = ~/.config/Terminal-Backgrounds/misc/ow.jpg
+background-image = ~/.config/images/dark-gaming-wallpapers.jpg
 background-image-opacity = 0.18
 background-image-fit = cover
 

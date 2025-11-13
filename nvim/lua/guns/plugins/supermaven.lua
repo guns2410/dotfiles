@@ -1,5 +1,6 @@
 return {
 	"supermaven-inc/supermaven-nvim",
+	enable = true,
 	config = function()
 		require("supermaven-nvim").setup({
 			log_level = "info", -- set to "off" to disable logging completely
