@@ -263,7 +263,9 @@ brew install maven
 brew isntall pnpm
 brew install helm
 brew install ghostty
+brew install leader-key
 
+brew install --cask nikitabobko/tap/aerospace
 brew install --cask alacritty
 brew install --cask font-dejavu-sans-mono-nerd-font
 brew install --cask font-droid-sans-mono-nerd-font
