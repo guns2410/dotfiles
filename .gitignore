@@ -28,3 +28,13 @@
 !starship/**/**
 !ghostty/
 !ghostty/**/**
+!aerospace/
+!aerospace/**/**
+!aerospace/aerospace.toml
+aerospace/aerospace
+!sketchybar/
+!sketchybar/**/**
+!borders/
+!borders/**/**
+!leader-key/
+!leader-key/**/**
