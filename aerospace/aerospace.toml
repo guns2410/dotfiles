@@ -77,105 +77,74 @@ outer.right = 10
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
 alt-enter = 'mode alt'
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
 
-[mode.alt.binding]
-    enter = 'mode main'
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
 
-    # All possible keys:
-    # - Letters.        a, b, c, ..., z
-    # - Numbers.        0, 1, 2, ..., 9
-    # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-    # - F-keys.         f1, f2, ..., f20
-    # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon,
-    #                   backtick, leftSquareBracket, rightSquareBracket, space, enter, esc,
-    #                   backspace, tab, pageUp, pageDown, home, end, forwardDelete,
-    #                   sectionSign (ISO keyboards only, european keyboards only)
-    # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-    #                   keypadMinus, keypadMultiply, keypadPlus
-    # - Arrows.         left, down, up, right
+alt-f = 'fullscreen'
+alt-c = ['move-mouse window-force-center']
 
-    # All possible modifiers: cmd, alt, ctrl, shift
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
 
-    # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+alt-minus = 'resize smart -64'
+alt-equal = 'resize smart +64'
+alt-shift-minus = 'resize smart -128'
+alt-shift-equal = 'resize smart +128'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-    # You can uncomment the following lines to open up terminal with alt + enter shortcut
-    # (like in i3)
-    # alt-enter = '''exec-and-forget osascript -e '
-    # tell application "Terminal"
-    #     do script
-    #     activate
-    # end tell'
-    # '''
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-o = 'workspace prev'
+alt-i = 'workspace next'
+alt-shift-u = 'move-node-to-workspace prev'
+alt-shift-i = 'move-node-to-workspace next'
+alt-0 = ['workspace 0', 'mode main']
+alt-1 = ['workspace 1', 'mode main']
+alt-2 = ['workspace 2', 'mode main']
+alt-3 = ['workspace 3', 'mode main']
+alt-4 = ['workspace 4', 'mode main']
+alt-5 = ['workspace 5', 'mode main']
+alt-6 = ['workspace 6', 'mode main']
+alt-7 = ['workspace 7', 'mode main']
+alt-8 = ['workspace 8', 'mode main']
+alt-9 = ['workspace 9', 'mode main']
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    slash = 'layout tiles horizontal vertical'
-    comma = 'layout accordion horizontal vertical'
+alt-p = ['focus-monitor prev', 'move-mouse window-force-center']
+alt-n = ['focus-monitor next', 'move-mouse window-force-center']
+alt-shift-p = 'move-workspace-to-monitor prev'
+alt-shift-n = 'move-workspace-to-monitor next'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    h = 'focus left'
-    j = 'focus down'
-    k = 'focus up'
-    l = 'focus right'
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-0 = 'move-node-to-workspace 0'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
 
-    f = 'fullscreen'
-    c = ['move-mouse window-force-center']
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-tab = 'workspace-back-and-forth'
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
+#alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-tab = [
+  'move-workspace-to-monitor --wrap-around next',
+  'exec-and-forget sketchybar --trigger aerospace_monitor_change TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)',
+]
 
-    minus = 'resize smart -64'
-    equal = 'resize smart +64'
-    shift-minus = 'resize smart -128'
-    shift-equal = 'resize smart +128'
-
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move
-    shift-h = 'move left'
-    shift-j = 'move down'
-    shift-k = 'move up'
-    shift-l = 'move right'
-
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    u = 'workspace prev'
-    i = 'workspace next'
-    shift-u = 'move-node-to-workspace prev'
-    shift-i = 'move-node-to-workspace next'
-    0 = ['workspace 0', 'mode main']
-    1 = ['workspace 1', 'mode main']
-    2 = ['workspace 2', 'mode main']
-    3 = ['workspace 3', 'mode main']
-    4 = ['workspace 4', 'mode main']
-    5 = ['workspace 5', 'mode main']
-    6 = ['workspace 6', 'mode main']
-    7 = ['workspace 7', 'mode main']
-    8 = ['workspace 8', 'mode main']
-    9 = ['workspace 9', 'mode main']
-
-    p = ['focus-monitor prev', 'move-mouse window-force-center']
-    n = ['focus-monitor next', 'move-mouse window-force-center']
-    shift-p = 'move-workspace-to-monitor prev'
-    shift-n = 'move-workspace-to-monitor next'
-
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    shift-0 = 'move-node-to-workspace 0'
-    shift-1 = 'move-node-to-workspace 1'
-    shift-2 = 'move-node-to-workspace 2'
-    shift-3 = 'move-node-to-workspace 3'
-    shift-4 = 'move-node-to-workspace 4'
-    shift-5 = 'move-node-to-workspace 5'
-    shift-6 = 'move-node-to-workspace 6'
-    shift-7 = 'move-node-to-workspace 7'
-    shift-8 = 'move-node-to-workspace 8'
-    shift-9 = 'move-node-to-workspace 9'
-
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-    tab = 'workspace-back-and-forth'
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    #alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-    shift-tab = [
-      'move-workspace-to-monitor --wrap-around next',
-      'exec-and-forget sketchybar --trigger aerospace_monitor_change TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)',
-    ]
-
-    # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-    shift-semicolon = 'mode service'
+# See: https://nikitabobko.github.io/AeroSpace/commands#mode
+alt-shift-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
