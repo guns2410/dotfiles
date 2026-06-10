@@ -90,6 +90,7 @@ config.background = {
 		repeat_x = "Mirror",
 		repeat_y = "Mirror",
 		hsb = dimmer,
+		opacity = 1,
 	},
 }
 
